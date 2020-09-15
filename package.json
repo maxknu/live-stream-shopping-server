@@ -1,5 +1,5 @@
 {
-  "name": "Live Stream Shopping Client",
+  "name": "Live Stream Shopping Server",
   "version": "2.0.0",
   "description": "",
   "main": "server.js",
