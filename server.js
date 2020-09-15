@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const utils = require('./app/utils');
 
+require('dotenv').config();
+
 const shopmodelsPath = `${__dirname}/app/models/`;
 fs.readdirSync(shopmodelsPath).forEach((file) => {
   if (~file.indexOf('.js')) {
@@ -23,7 +25,7 @@ require('./app/controllers/socketIO')(io);
 mongoose.Promise = global.Promise;
 global.appRoot = path.resolve(__dirname);
 
-mongoose.connect('mongodb://localhost:27017/livestream', (err) => {
+mongoose.connect(process.env.MongoCloudDB, (err) => {
   if (err) {
     console.log('....................... ERROR CONNECT TO DATABASE');
     console.log(err);
@@ -42,11 +44,11 @@ app.set('socketio', io);
 app.set('server', server);
 app.use(express.static(`${__dirname}/public`));
 
-server.listen(3333, (err) => {
+server.listen(process.env.Port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`listening on port 3333`);
+    console.log(`listening on port ${process.env.Port}`);
   }
 });
 
