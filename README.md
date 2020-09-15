@@ -2,17 +2,12 @@
 
 ### Live stream using RTMP for React Native App Live Stream
 
-Client: https://github.com/sieuhuflit/react-native-live-stream-rtmp-example
+Client: https://github.com/maxknu/live-stream-shopping-client
 
-## Demo v2
+## Demo 
 
-**Note: Here is demo for version 2.0**
-
-<img src="demo/1.png" width="260" title="hover text">
-
-## Demo v1
-
-**Note: Here is demo for version 1.0**
+**Note: Here is demo**
+- NOTE: the product listing is not implemented
 
 | Streamer                                                                                                                  | Viewer                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -33,9 +28,27 @@ Client: https://github.com/sieuhuflit/react-native-live-stream-rtmp-example
 
 - Install NodeJS (https://nodejs.org)
 - Install ffmpeg (https://www.ffmpeg.org/download.html). If you are using MacOS just type _brew install ffmpeg_
-- MongoDB (https://www.mongodb.com/)
+- Use MongoDB Atlas https://www.mongodb.com/cloud/atlas and create a free account (You can also install local MongoDB www.mongodb.com)
 
-Then start MongoDB. Then type the following to terminal
+## Get Started
+
+- grab your MongoDB connection link from MongoDB Atlas
+- create .env file in root folder
+- add two .env variables here is an example
+
+```
+MongoCloudDB=mongodb+srv://USERNAME:PASSWORD@cluster0-kv8at.gcp.mongodb.net/test?retryWrites=true&w=majority
+Port=3333
+```
+
+run yarn to install packages and start the nodejs server
+```
+yarn install
+node server.js
+```
+
+## Local MongoDB
+Skip this step if you use https://www.mongodb.com/cloud/atlas. Only if you want to install MongoDB locally. Then start MongoDB. Then type the following to terminal. 
 
 ```
 # mongo
@@ -61,12 +74,6 @@ db.createUser({
 })
 ```
 
-## Get Start
-
-```
-yarn install
-node server.js
-```
 
 ## Want to Replay video
 
